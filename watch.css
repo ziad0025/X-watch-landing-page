@@ -1,0 +1,359 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'cairo', sans-serif;
+}
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+header {
+
+    /* 1. خلفية شفافة قليلاً (أهم خطوة) */
+    background: rgba(255, 255, 255, 0.05); 
+
+    /* 2. تأثير التغبيش (البلر) للخلفية اللي ورا الهيدر */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* لضمان العمل على متصفح Safari */
+
+    /* 3. حدود رفيعة جداً لتعطي إيحاء بحافة الزجاج */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* 4. ظل خفيف جداً ليعطي عمق */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display:flex ;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #ffffff;
+    position: fixed;   /* تجعل الهيدر يخرج من تدفق الصفحة العادي ويثبت في مكانه */
+    top: 0;            /* تضمن التصاقه بأعلى الشاشة تماماً */
+    width: 100%;       /* تضمن أن الهيدر يغطي عرض الشاشة بالكامل بعد التثبيت */
+    z-index: 1000;
+}
+.logo p {
+    display: flex;
+    align-content: center;
+    color: #ffffff;
+    font-size: larger;
+}
+.logo span {
+    color: #ccff00;
+}
+.order{
+    display: flex;
+    align-content: center; 
+}
+button {
+    background-color:#ccff00;
+    border-style: none;
+    padding: 5px;
+    border-radius: 15px;
+    box-shadow: 1px 0px 25px #ccff00;
+    transition: 1s;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    
+}
+nav ul a {
+    text-decoration: none;
+    font-size: large;
+    color: #ffffff;
+    transition: 1s;   
+}
+nav ul a:hover {
+    color: #ccff00;
+}
+body { 
+    background-color: #0f0f0f;
+    overflow-x: hidden;
+}
+h1 ,h2 , h3 , h4 , li {
+    color: #ffffff;
+}
+p { 
+    color: #a0a0a0;
+}
+.hero-continar{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    line-height: 1.8;
+    height: 100vh; /* طول الشاشة بالكامل */
+    width: 100%;
+}
+.hero ul { 
+    line-height: 2;
+    margin-top: 20px;
+    font-size: larger;
+}
+.hero p {
+    margin-bottom:10px ;
+}
+.headline { 
+    align-content: center;
+}
+.headline h1 {
+    font-size: 60px;
+}
+.none-back{
+   border-radius: 15px;
+   border-style: solid;
+    background-color:  #0f0f0f;
+    padding: 5px;
+    color:#ccff00;
+    border-color: #ccff00;
+    transition: 1s;
+}
+.have-back {
+    border-style:solid ;
+    border-color: #ccff00;
+    margin-bottom:15px ;
+    padding: 5px;
+    background-color: #ccff00;
+     border-radius: 15px;
+    box-shadow: 1px 1px 25px #ccff00;
+    transition: 0.5s;
+    margin-right: 10px;
+}
+.none-back:hover{
+    background-color: #ccff00;
+    color: black;
+}
+.have-back:hover{
+   transform: scale(1.1);
+}
+.hero img {
+    width: 100%;
+    max-width: 500px ;
+    height: auto;
+    z-index: 2;
+    position: relative;
+    transition: 1s;
+}
+.hero img:hover {
+    transform: scale(1.02);
+}
+.sec-image {
+    position: relative; /* يجعل هذا الـ div هو المرجع لكل ما بداخله */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec-image h2 {
+    position: absolute; /* يجعل النص "يطير" فوق أو خلف العناصر الأخرى */
+    font-size: 15rem;    /* حجم ضخم جداً ليظهر من خلف الصورة */
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.05); /* شفافية عالية جداً ليكون مجرد ظل */
+    z-index: 1;         /* يضع النص في طبقة تحت الصورة */
+    letter-spacing: 10px;
+    pointer-events: none; /* عشان لو حد داس عليه ميعطلش الماوس عن الصورة */
+}
+.Features-continar {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    text-align: center;
+     height: 100vh; /* طول الشاشة بالكامل */
+    width: 100%;
+}
+.Features h1 { 
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 1px 1px 25px #ccff00;
+}
+.Features-continar img {
+    width: 100%;
+    max-width: 100px ;
+    height: auto;   
+}
+.card-edit { 
+    box-shadow: 1px 2px 15px #777777;
+    column-gap: 5px;
+    border-radius: 15px;
+    padding: 60px;
+     padding-left: 70px;
+    padding-right: 70px;
+    /* 1. الخلفية: لازم تكون شفافة جداً */
+    background: rgba(255, 255, 255, 0.03); 
+    /* 2. تأثير التغبيش */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    /* 3. الحواف الزجاجية (دي اللي بتبين الكارت) */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* 4. تنعيم الزوايا */
+    border-radius: 20px;
+    /* 5. مسافات داخلية عشان الكلام ميبقاش لازق في الحواف */
+    /* 6. تأثير الظل الناعم ليعطي عمق */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease; /* عشان الحركة اللي هنعملها دلوقتي */
+}
+.right-sec-f{
+    display: flex;
+    flex-direction: column;
+    gap : 30px ;
+}
+.left-sec-f{
+    display: flex;
+    flex-direction: column;
+    gap : 30px ;
+}
+
+.card-edit:hover{
+    transform: translateY(-10px); /* الكارت يترفع لفوق شوية */
+    background: rgba(255, 255, 255, 0.08); /* الشفافية تقل شوية فيبين إنه نور */
+    border: 1px solid rgba(204, 255, 0, 0.3); /* الحافة تاخد لون النيون بتاعك */
+}
+.Collection { 
+    text-align: center;
+    height: 100vh; /* طول الشاشة بالكامل */
+    width: 100%;
+    text-shadow:1px 1px 25px  #ccff00;
+}
+.Collection-continar{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+.two-photo { 
+    display: flex;
+    flex-direction: column;
+    gap: 50px ;
+}
+.two-photo img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 1px 2px 35px #414141; 
+} 
+.one-photo img {
+    width:100% ;
+    max-width: 850px ;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 1px 2px 35px #414141;
+}
+footer { 
+    background-color: #050505;
+    border-top: rgba(255, 255, 255, 0.05);
+    padding: 50px;
+    text-align: center;
+}
+.footer-container {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+.footer-column ul {
+    list-style: none;
+}
+.footer-column a {
+    transition: 0.5s ;
+    
+}
+.footer-column a:hover{
+    color: #ccff00;
+}
+.email-class { 
+    display: flex;
+    gap: 12px ;   
+}
+input[type="submit"] { 
+    padding: 5px ;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #ccff00;
+    border-radius: 15px ;
+    border-style: none;
+}
+.footer-copy{
+ margin-top: 30px;
+}
+footer a { 
+    text-decoration: none;
+    color: #a0a0a0;
+}
+.footer-column { 
+    line-height: 2 ;
+}
+/* --- تعديلات عامة للجهاز اللوحي والموبايل --- */
+@media (max-width: 1024px) {
+    
+    /* 1. إصلاح الهيرو سكشن */
+    .hero-continar {
+        flex-direction: column-reverse; /* الصورة تظهر فوق الكلام أو العكس حسب رغبتك */
+        width: auto; 
+        height: auto;
+        padding: 100px 20px;
+        text-align: center;
+    }
+    .headline h1 {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+    .sec-image h2 {
+        font-size: 8rem; /* تصغير الكلمة الخلفية */
+    }
+    /* 2. إصلاح المميزات (Features) */
+    .Features-continar {
+        flex-direction: column;
+        height: auto;
+        padding: 50px 20px;
+        gap: 20px;
+    }
+    .right-sec-f, .left-sec-f {
+        width: 100%;
+        gap: 20px;
+    }
+    .card-edit {
+        width: 100%;
+        padding: 30px;
+    }
+    /* 3. إصلاح الكوليكشن (Collection) */
+    .Collection {
+        height: auto;
+        padding: 50px 10px;
+    }
+    .Collection-continar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .one-photo img, .two-photo img {
+        max-width: 100%;
+    }
+    /* 4. إصلاح الفوتر */
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .email-class {
+        justify-content: center;
+    }
+    .hero ul {
+        list-style: none;
+    }
+}
+
+/* --- تعديلات خاصة للموبايل الصغير (768px وأقل) --- */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* إخفاء القائمة الطويلة في الموبايل مؤقتاً أو تصغيرها */
+    }
+    .headline h1 {
+        font-size: 30px;
+    }
+    .hero img {
+        max-width: 300px; /* تصغير حجم الساعة لتناسب الشاشة */
+    }
+}
+
+
